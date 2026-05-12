@@ -1,7 +1,7 @@
-/* Tirar depois que estiver pronto 
+/* Tirar depois que estiver pronto */
 *{
     border: 1px solid red !important;
-}*/
+}
 
 /* VARIÁVEIS CSS 
  Aqui guardamos as cores principais do site. Se o Dr. Pierre quiser mudar o tom de azul no futuro, 
@@ -11,6 +11,11 @@
     --dourado:#d4af37; /* cor que passa requinte/luxo*/
     --fonte-titulo:'Playfair Display', serif;
     --fonte-texto:'Poppins', sans-serif;
+}
+/* Coloque logo abaixo do seu * { margin: 0; padding: 0; ... } */
+h1, h2, h3 {
+    overflow-wrap: break-word; 
+    word-wrap: break-word;
 }
 
 /* RESET CSS 
@@ -63,12 +68,21 @@
     max-width: 800px;/* Impede que o texto fique comprido demais em telas gigantes */
     padding: 0 20px; /* Dá um respiro nas laterais para telas menores */
 }
-/* Estilo do título principal */
+
 .hero-content h1 {
-    font-size: 3.5rem; /* Tamanho da fonte grande */
-    line-height: 1.2; /* Espaçamento entre as linhas do título */
+    font-size: clamp(2rem, 5vw, 3.5rem); 
+    line-height: 1.2;
     margin-bottom: 20px;
-    font-family: var(--fonte-titulo); /* Usa a fonte clássica que definimos lá em cima */
+    font-family: var(--fonte-titulo);
+    padding: 0 5%; 
+}
+
+/* E faça o mesmo com o .titulo-secao que está espalhado pelo site */
+.titulo-secao {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    line-height: 1.2;
+    margin-bottom: 40px;
+    padding: 0 15px;
 }
 
 /* Aquele pedaço de texto que queremos dar ênfase */
@@ -204,6 +218,15 @@
     max-width: 1200px;
     margin: 0 auto;
     gap: 60px; /* Espaço generoso entre a foto e o texto */
+}
+/* Pode colocar antes de começar as seções específicas */
+.container, .container-sobre, .container-servicos, .container-rodape {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box; 
 }
 
 /* Configura a coluna da foto para ocupar metade do espaço */
