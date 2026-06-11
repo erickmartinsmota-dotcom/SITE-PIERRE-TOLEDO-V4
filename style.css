@@ -46,7 +46,7 @@ h1, h2, h3 {
     color: white; /* cor do texto */
 
     /* Imagem de fundo. Se não encontrar a imagem , ele usa a cor azul escuro como fallback */
-    background:var(--azul-escuro) url('imagens/fundo-advocacia.jpg') no-repeat center center/cover;
+    background:var(--azul-escuro) url('imagens/fundo-advocacia.webp') no-repeat center center/cover;
     overflow:hidden; /*Esconde qualquer coisa que vazer para fora da seção*/
 }
 
@@ -99,31 +99,41 @@ h1, h2, h3 {
 
 /* Container que alinha os botões lado a lado */
 .hero-buttons {
-    display: flex;
-    gap: 15px; /* Espaço entre os botões */
+   display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Se a tela for muito pequena (celular), joga um botão para baixo do outro */
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
 }
 
 /* Estilo do Botão Dourado (Principal) */
 .btn-principal {
     background-color: var(--dourado);
-    color: #fff;
-    padding: 15px 30px; /* Altura e largura internas */
-    border-radius: 5px; /* Bordas arredondadas */
-    text-decoration: none; /* Tira o sublinhado padrão dos links */
+    color: #ffffff;
+    padding: 15px 35px;
+    text-decoration: none;
     font-weight: bold;
-    transition: 0.3s; /* Tempo da animação ao passar o mouse */
-    text-transform: uppercase; /* Deixa tudo em maiúsculo */
+    border-radius: 5px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    text-align: center;
     display: inline-block;
-    letter-spacing: 1px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    position: relative;     /* Permite que o z-index funcione */
+    z-index: 10;            /* Joga o botão para a camada da frente */
+    cursor: pointer;        /* Garante que o mouse vire a "mãozinha" de clique */
+
 }
 
 /* Efeito ao passar o mouse (Hover) no botão principal */
 .btn-principal:hover {
-    background-color: #c5a059; /* Escurece um pouco o dourado */
+    background-color: #b8962e; 
     transform: translateY(-3px); /* Faz o botão dar um pulinho para cima */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Estilo do Botão Vazado (Secundário) */
@@ -159,34 +169,64 @@ h1, h2, h3 {
 }
 
 /* =========================================
-   BOTÃO FLUTUANTE DO WHATSAPP
+   BOTÃO FLUTUANTE 
    ========================================= */
-.whatsapp-flutuante {
-    position: fixed; /* Fixa o elemento na tela */
-    bottom: 30px;    /* Distância da borda inferior */
-    right: 30px;     /* Distância da borda direita */
-    width: 60px;     /* Largura do círculo */
-    height: 60px;    /* Altura do círculo */
-    background-color: #25D366; /* Verde oficial do WhatsApp */
-    border-radius: 50%; /* Transforma o quadrado em um círculo perfeito */
+
+/* Container que agrupa e posiciona os botões */
+.botoes-flutuantes {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+}
+
+/* Estilo base dos botões redondos */
+.btn-flutuante {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para destacar do fundo */
-    z-index: 1000; /* Garante que fique por cima de tudo no site */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    text-decoration: none;
 }
 
-/* Tamanho do ícone dentro do botão */
-.whatsapp-flutuante img {
+.btn-flutuante:hover {
+    transform: scale(1.1);
+}
+
+/* Cores de fundo (Vermelho e Verde) */
+.btn-flutuante.email {
+    background-color: #e53935; 
+}
+.btn-flutuante.whatsapp {
+    background-color: #25d366; 
+}
+
+/* Tamanho dos ícones (sem o filtro) */
+.icone-btn {
     width: 35px;
     height: 35px;
+    object-fit: contain;
 }
-
-/* Efeito Hover: O que acontece ao passar o mouse */
-.whatsapp-flutuante:hover {
-    transform: scale(1.1); /* Faz o botão crescer 10% */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Aumenta a sombra */
+.img-capa{
+    width:100%; /* Ocupa 100% da largura da tela */
+    height: 100vh; /* Ocupa 100% da altura da tela (pode ajustar esse valor se quiser menor) */
+    object-fit: cover;
+    object-position: center;
+}
+.secao-capa{
+    background-image: url('imagens/capa-site.webp');
+    background-size: cover; /* 🌟 A MÁGICA DO MOBILE: Preenche a div sem distorcer */
+    background-position: center; /* Centraliza o foco da imagem */
+    background-repeat: no-repeat; /* Evita que a foto fique se repetindo como um azulejo */
+    width: 100%;
+    height: 100vh; /* Altura da tela */
 }
 
 /* Ajuste para telas de celular */
@@ -202,7 +242,10 @@ h1, h2, h3 {
         width: 30px;
         height: 30px;
     }
+
+  
 }
+
 /* =========================================
    SEÇÃO SOBRE (Perfil do Advogado)
    ========================================= */
@@ -228,6 +271,24 @@ h1, h2, h3 {
     padding-right: 20px;
     box-sizing: border-box; 
 }
+
+/* Limpando e forçando o título para baixo */
+#atuacao {
+    display: block !important;
+    width: 100%;
+    clear: both; /* Garante que ele não tente subir para o lado da foto */
+    padding-top: 100px !important; /* Espaço interno no topo da seção */
+}
+
+#atuacao h2 {
+    margin-top: 0 !important;
+    margin-bottom: 40px !important;
+    text-align: center;
+    font-size: 2.5rem; /* Deixa o título imponente */
+    color: #1a2b4c; /* Cor azul escura profissional */
+}
+
+
 
 /* Configura a coluna da foto para ocupar metade do espaço */
 .imagem-sobre {
@@ -356,6 +417,35 @@ h1, h2, h3 {
     padding: 15px 20px;
 }
 
+/* 1. Deixando o cabeçalho mais alto e imponente */
+header, .cabecalho {
+    /* O primeiro valor (25px) aumenta a altura (cima e baixo). O segundo (5%) mantém as laterais */
+    padding: 10px 5% !important; 
+    
+    /* Matando qualquer margem ou borda que crie a linha branca */
+    margin-bottom: 0 !important;
+    border-bottom: none !important; 
+}
+
+/* Ajustes para telas grandes (PC/Notebook) */
+.hero {
+    /* MÁGICA: Define que a foto ocupará no mínimo 80% da altura da tela */
+    min-height: 80vh; 
+    
+    /* Mantemos os outros estilos que você já deve ter */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Centralização do conteúdo interno (Título e Botão) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Garante que o espaçamento interno (padding) respire */
+    padding: 60px 20px; 
+}
+
 /* Estilo do Logo/Nome no menu */
 .logo {
     font-family: var(--fonte-titulo);
@@ -415,6 +505,7 @@ html{
     scroll-behavior: smooth;
 }
 
+
 /* No botão do menu , vamos adicionar um efeito de pulsação leve */
 .btn-menu{
     background-color: var(--dourado);
@@ -467,6 +558,16 @@ html{
 .card-detalhado:houve {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+#servicos{
+    scroll-margin-top:90px;
+}
+
+.seca-servicos{
+    padding:80px 20px ;
+    background-color: #f4f4f4;
+    text-align:center;
 }
 
 /*Estilo das tags (etiquetas)*/
@@ -587,7 +688,19 @@ html{
 
     /* 4. Ajuste dos Botões (Para não ficarem grudados na borda) */
     .hero-buttons {
-        gap: 10px;
-        padding: 0 10px;
+       justify-content: center; /*centraliza o botão no cell*/
+    }
+
+    .btn-principal{
+        width: 90%; /* deixa o botão grande e facíl de tocar pelo cell */
+        max-width: 320px;
+    }
+
+    .hero {
+        /* No celular, usamos um tamanho um pouco menor para o botão aparecer rápido */
+        min-height: 60vh; 
+        
+        /* Ajuste o padding para não esmagar o texto dos lados */
+        padding: 40px 15px;
     }
 }

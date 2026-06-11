@@ -7,11 +7,22 @@
 
         <title>DR. Pierre Toledo | Advocacia Especializada</title>
 
+        <meta name="description" content="Especialista em direito. Agende sua consulta conosco.">
+        
+        <meta property="og:title" content="Dr. Pierre Toledo - Advocacia Especializada">
+        <meta property="og:description" content=" Especilista em direito. Agende sua consulta Conosco">
+        <meta property="og:image" content="https://seusite.com.br/imagens/foto-pierre.webp">
+
+        <link rel="icon" type="image/png" href="imagens/favicon.png">
+
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="style.css">
+        <link rel="preload" as="image" href="imagens/fundo-advocacia.webp">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
         
     </head>
 
@@ -23,12 +34,14 @@
                 <nav class="menu">
                     <ul>
                       <li><a href="#sobre">Sobre</a></li>
-                      <li><a href="#servicos">Especialidades</a></li>
-                      <li><a href="https://wa.me/5521994036514" class="btn-menu" target="_blank">Fale Conosco</a></li>
+                      
+                      <li><a href="#rodape" class="btn-principal scroll-suave">Fale Conosco</a></li>
                      </ul>
                 </nav>
             </div>
         </header>
+
+        
 
         <section class="hero">
             <div class="hero-overlay"></div>
@@ -38,122 +51,186 @@
 
                 <p>Protegendo o seu patrimônio contra abusos financeiros com ética, agilidade e transparência.</p>
 
-                <div class="hero-buttons">
-                    <a href="https://wa.me/5521994036514" class="btn-principal" target="_blank">Falar com Especialista</a>
-                    <a href="#serviços" class="btn-secundario">Conhecer Serciços</a>
+                <div class="hero-buttons">                
+                    <a href="#ajuda" class="btn-principal scroll-suave">Conhecer Serviços</a>
                 </div>
             </div>   
 
         </section>
 
-        <section id="servicos" class="secao-servicos">
-            <div class="container-servicos">
-                <h2 class="titulo-secao">Minha Especialidades</h2>
-            </div>
-
-        </section>
+       
 
         <section id="sobre" class="secao-sobre">
           <div class="container-sobre">
             
                 <div class="imagem-sobre">
-                  <img src="imagens/foto-pierre.jpg" alt="Dr. Pierre Toledo no Escritório">
+                  <img src="imagens/foto-pierre.webp" alt="Dr. Pierre Toledo no Escritório">
                 </div>
-            
+
                 <div class="texto-sobre">
                  <h2 class="titulo-secao">Conheça o Dr. Pierre Toledo</h2>
-                 <p>Com forte atuação nas áreas de Direito Bancário e do Consumidor, nosso escritório nasceu com o propósito de equilibrar a balança da justiça para o cidadão.</p>
-                 <p>Nossa missão é combater práticas abusivas de grandes instituições, oferecendo um atendimento humanizado, transparente e focado em resultados reais para o seu patrimônio.</p>
-                 <p><strong>Mais do que defender processos, nós defendemos o seu sossego.</strong></p>
+                 <p>Dr. Pierre Toledo — OAB/RJ 271.285 — advogado, bacharel em Direito pela Faculdade Internacional Signorelli e pós-graduado em Direito Civil e Processo Civil, com atuação voltada ao Direito do Consumidor e Direito Bancário.</p>
+                 <p>Iniciou sua trajetória prática ainda durante a graduação, atuando como estagiário no Tribunal de Justiça, junto ao Juizado Especial Cível, na Defensoria Pública da Violência Doméstica e Familiar Contra a Mulher e no escritório HBM Advogados, especializado em demandas consumeristas e bancárias.</p>
+                 <p>Após a aprovação no Exame da OAB, passou a integrar a equipe HBM Advogados e também fundou seu escritório próprio, com foco em ações envolvendo fraudes bancárias, empréstimos indevidos, golpes financeiros e defesa dos direitos do consumidor.</p>
+                 <p>Seu escritório está localizado no bairro Recreio dos Bandeirantes, no Rio de Janeiro, com atuação em todos os estados do Brasil.</p>
+                 <p><strong>“É melhor se arrepender por algo que fez do que por nunca ter tentado.”</strong></p>
                 </div>
             
           </div>
         </section>
 
-        <a href="https://wa.me/5521994036514" class="whatsapp-flutuante" target="_blank" rel="noopener noreferrer">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Falar pelo WhatsApp">
-        </a>
+        <div class="botoes-flutuantes">
+            
 
-        <section id="atuacao" class="secao-atuacao">
+            <a href="https://wa.me/5521979146966?text=Olá,%20Dr.%20Pierre.%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="btn-flutuante whatsapp">
+                <img src="https://api.iconify.design/mdi/whatsapp.svg?color=white" alt="WhatsApp" class="icone-btn">
+            </a>
+
+            </a>
+        </div>
+
+        <section id="ajuda" class="secao-atuacao">
             <div class="container">
                 <h2 class="titulo-secao">Como posso te ajudar?</h2>
                 <p class="subtitulo-secao">Soluções jurídicas estratégicas para conflitos com instituições financeiras e relações de consumo. </p>
                 
                 <div class="grid-atuacao">
-                    <div class="card-detalhado">
-                        <div class="tag-area bancario">Direito Bancário</div>
+                    <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tag-area">Proteção contra </div>
                         <h3>Juros Abusivos</h3>
                         <p>Análise de contratos de financiamento de veículos e empréstimos para redução de parcelas e eliminação de taxas ilegais.</p>
                     </div>
 
-                    <div class="card-detalhado">
-                        <div class="tag-area bancario">Direito Bancário</div>
+                    <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tag-area ">Proteção contra </div>
                         <h3>Busca e Apreensão</h3>
                         <p>Defesa estratégica para evitar a perda do seu veículos e renegociação imediata da dívida bancária.</p>                        
                     </div>
 
-                    <div class="card-detalhado">
-                        <div class="tag-area consumidor">Consumidor</div>
+                    <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tag-area">Proteção contra</div>
                         <h3>Negativação Indevida</h3>
                         <p>Limpeza de nome e pedido de indenização por danos morais caso seu nome tenha sido sujo injustamente no SPC/SERASA.</p>
                     </div>
 
-                    <div class="card-detalhado">
-                        <div class="tag-area consumidor">Consumidor</div>
-                        <h3>Golpes e Fraudes</h3>
+                    <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tag-area">Proteção contra</div>
+                        <h3>Golpes  de empréstimos (consignado e comum)</h3>
                         <p>Recuperação de valores perdidos em golpes de PIX , clonagem de cartões e compras não reconhecidas na fatura .</p>
                     </div>
 
-                    <div class="card-detalhado">
-                        <div class="tag-area bancario">Direito Bancário</div>
-                        <h3>RMC e RCC</h3>
+                    <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tag-area">Proteção contra</div>
+                        <h3>Cartão de crédito consignado (RMC e RCC)</h3>
                         <p>Suspensão de descontos abusivos de reservas da margem consignada no benefício de aposentados e pensionistas.</p>
                     </div>
 
-                    <div class="card-detalhado">
-                        <div class="tag-area consumidor">Consumidor</div>
-                        <h3>Danos Morais</h3>
-                        <p>Ações contra companhias aéreas, operadoras de telefonia e empresas de energia por má prestação de serviço.</p>
+                    <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tag-area">Proteção contra</div>
+                        <h3>Golpe da Falsa Portabilidade</h3>
+                        <p>Atuação focada na anulação de contratos fraudulentos e na recuperação de valores indevidamente cobrados, exigindo a responsabilização das instituições envolvidas.</p>
+                    </div>
+
+                    <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tag-area">Proteção contra</div>
+                        <h3>Golpe do PIX</h3>
+                        <p> Atuação rápida para o bloqueio e recuperação de valores, exigindo a responsabilização dos bancos por falhas de segurança.</p>       
+                    </div>
+
+                
+
+                    <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100"> 
+                        <div class="tag-area"></div>
+                        <h3>   Defesa da pessoa física (geral)  </h3>
+                        <p> Proteção integral dos seus direitos contra práticas comerciais abusivas, cobranças indevidas e falhas na prestação de serviços.</p>                 
+                        
+                    </div>
+
+                    
+                    <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100"> 
+                        <div class="tag-area"> </div>
+                        <h3>   Defesa da PJ no mercado de consumo (geral)  </h3>
+                        <p> Defesa estratégica para a sua empresa, focada na mitigação de riscos e na segurança jurídica durante as relações de consumo. </p>                 
+                        
                     </div>
 
                 </div>            
 
             </div>
 
-        </section>        
+        </section>    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+           <script>
+             AOS.init({
+              duration: 800, /* O tempo que a animação demora (0.8 segundos) */
+               once: true     /* A animação acontece apenas uma vez quando o cliente desce a página */
+              });
+        </script>
 
              
 
         <footer class="rodape">
+            <footer id="rodape" class="container-rodape"></footer>
             <div class="container-rodape">
             
                <div class="coluna-rodape">
                  <h3 class="logo-rodape">Dr. Pierre Toledo</h3>
+                 
                   <p>Advocacia especializada em proteger o seu patrimônio com ética e excelência.</p>
+                  <p class="oab"><strong>OAB/RJ - 271.285</strong></p>
               </div>
             
                 <div class="coluna-rodape">
                   <h4>Contatos</h4>
-                 <p>📞 (11) 99999-9999</p>
-                 <p>✉️ contato@pierretoledo.adv.br</p>
-                <p>🕒 Seg a Sex - 09h às 18h</p>
+                 <p>📞 (21) 97914-6966</p>
+                 <p>✉️ advpierretoledo@gmail.com</p>
+                <p>🕒 Seg à Sex - 09h às 16h</p>
                  </div>
             
                 <div class="coluna-rodape">
                  <h4>Escritório</h4>
-                 <p>📍 Av. Paulista, 1000 - Sala 101<br>Bela Vista, São Paulo - SP</p>
-                 <p class="oab"><strong>OAB/SP 123.456</strong></p>
+                 <p>📍 Avenida das Américas, 18000 – sala 316, ala C, edifício ONE OFFICE - Recreio dos Bandeirantes – Rio de Janeiro/RJ, CEP 22.790-704</p>
+                 
                  </div>
             
                 
             </div>    
         
                 <div class="direitos-autorais">
-                 <p>&copy; 2026 Dr. Pierre Toledo. Todos os direitos reservados. | Desenvolvido por [Seu Nome/Empresa]</p>
+                 <p>&copy; 2026 Dr. Pierre Toledo. Todos os direitos reservados. | Desenvolvido por Erick Mota</p>
                 </div>
         </footer>
 
-        <script src="script.js"></script>
+        <script>
+            // seleciona todos os links de navegação interna e o novo botão 
+            const linksInternos= document.querySelectorAll('a[href^="#"], .scroll-suave');
+
+            linksInternos.forEach(link=>{
+                link.addEventListener('click', function(e){
+                    e.preventDefault(); //impede o navegador de tentar abrir uma página nova(evita o 404)
+
+                    const idDeDestino= this.getAttribute('href');
+                    const elementoDestino = document.querySelector(idDeDestino);
+
+                    if(elementoDestino){
+                        //se encontrar a seção , calcula a altura descontando o menu fixo 
+                        const topoElemento = elementoDestino.getBoundingClientRect().top + window.pageYOffset;
+                        const alturaMenu = 90; // Folga para o menu 
+
+                        window.scrollTo({
+                            top:topoElemento -alturaMenu,
+                            behavior:'smooth' //desliza suavemente 
+                        })
+                    }
+                })
+            }
+
+            )
+
+
+
+        </script>
 
 
     </body>
