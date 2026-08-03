@@ -5,13 +5,13 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>DR. Pierre Toledo | Advocacia Especializada</title>
+        <title>Dr. Pierre Toledo | Advocacia Especializada</title>
 
         <meta name="description" content="Especialista em direito. Agende sua consulta conosco.">
         
         <meta property="og:title" content="Dr. Pierre Toledo - Advocacia Especializada">
         <meta property="og:description" content=" Especilista em direito. Agende sua consulta Conosco">
-        <meta property="og:image" content="https://seusite.com.br/imagens/foto-pierre.webp">
+        <meta property="og:image" content="https://seusite.com.br/imagens/foto-pierre.jpg">
 
         <link rel="icon" type="image/png" href="imagens/favicon.png">
 
@@ -20,16 +20,49 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.css?v=2">
         <link rel="preload" as="image" href="imagens/fundo-advocacia.webp">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+       <!-- Google tag (gtag.js) -->
+       <script async src="https://www.googletagmanager.com/gtag/js?id=G-7MCPGBG1TW"></script>
+       <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+
+         gtag('config', 'G-7MCPGBG1TW');
+        </script>     
         
+        <script>
+            gtag('event', 'conversion',{
+                'send_to' : 'AW-18345628693/-35uCInHytUcEJWo8KtE',
+                'value' : 1.0 ,
+                'currency' : 'BRL'
+            });
+        </script>
+
+        <script>
+            function gtag_report_convcersion(url){
+                var callback = function () {
+                    if(typeof(url) !='undefined'){
+                        window.location = url;
+                    }
+                };
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-18345628693/-35uCInHytUcEJWo8KtE',
+                    'currency': 'BRL',
+                    'event_callback': callback
+                });
+                return false;
+            }
+        </script>
     </head>
 
     <body>
         <header class="cabecalho">
            <div class="container-cabecalho">
-              <a href="#" class="logo">DR. Pierre Toledo</a>
+              <a href="#" class="logo">Dr. Pierre Toledo</a>
             
                 <nav class="menu">
                     <ul>
@@ -39,9 +72,9 @@
                      </ul>
                 </nav>
             </div>
-        </header>
+         </header>
 
-        
+
 
         <section class="hero">
             <div class="hero-overlay"></div>
@@ -64,7 +97,7 @@
           <div class="container-sobre">
             
                 <div class="imagem-sobre">
-                  <img src="imagens/foto-pierre.webp" alt="Dr. Pierre Toledo no Escritório">
+                  <img src="imagens/foto-pierre.jpg" alt="Dr. Pierre Toledo no Escritório">
                 </div>
 
                 <div class="texto-sobre">
@@ -72,7 +105,7 @@
                  <p>Dr. Pierre Toledo — OAB/RJ 271.285 — advogado, bacharel em Direito pela Faculdade Internacional Signorelli e pós-graduado em Direito Civil e Processo Civil, com atuação voltada ao Direito do Consumidor e Direito Bancário.</p>
                  <p>Iniciou sua trajetória prática ainda durante a graduação, atuando como estagiário no Tribunal de Justiça, junto ao Juizado Especial Cível, na Defensoria Pública da Violência Doméstica e Familiar Contra a Mulher e no escritório HBM Advogados, especializado em demandas consumeristas e bancárias.</p>
                  <p>Após a aprovação no Exame da OAB, passou a integrar a equipe HBM Advogados e também fundou seu escritório próprio, com foco em ações envolvendo fraudes bancárias, empréstimos indevidos, golpes financeiros e defesa dos direitos do consumidor.</p>
-                 <p>Seu escritório está localizado no bairro Recreio dos Bandeirantes, no Rio de Janeiro, com atuação em todos os estados do Brasil.</p>
+                 <p>Seu escritório está localizado no bairro Recreio dos Bandeirantes, no Rio de Janeiro, com atuação em todos os Estados do Brasil.</p>
                  <p><strong>“É melhor se arrepender por algo que fez do que por nunca ter tentado.”</strong></p>
                 </div>
             
@@ -82,9 +115,9 @@
         <div class="botoes-flutuantes">
             
 
-            <a href="https://wa.me/5521979146966?text=Olá,%20Dr.%20Pierre.%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="btn-flutuante whatsapp">
-                <img src="https://api.iconify.design/mdi/whatsapp.svg?color=white" alt="WhatsApp" class="icone-btn">
-            </a>
+               <a href="https://wa.me/5521979146966?text=Olá,%20Dr.%20Pierre.%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" style="background-color: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; width: 60px; height: 60px;" onclick="return gtag_report_conversion('https://wa.me/5521979146966?text=Olá,%20Dr.%20Pierre.%20Gostaria%20de%20agendar%20uma%20consulta.');">
+                 <img src="https://api.iconify.design/mdi/whatsapp.svg?color=white" alt="WhatsApp" class="icone-btn" style="width: 35px; height: 35px;">
+               <a>
 
             </a>
         </div>
@@ -97,62 +130,138 @@
                 <div class="grid-atuacao">
                     <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100">
                         <div class="tag-area">Proteção contra </div>
-                        <h3>Juros Abusivos</h3>
-                        <p>Análise de contratos de financiamento de veículos e empréstimos para redução de parcelas e eliminação de taxas ilegais.</p>
+                        <h3>Golpes de empréstimos</h3>
+                        <p>Recuperação de valores perdidos em golpes de PIX, clonagem de cartões e compras não reconhecidas na fatura.</p>
+                        <p></p>
+
+                        <a href="https://www.instagram.com/reel/DYsCL4iRu6W/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="btn-saiba-mais">Saiba mais</a>
                     </div>
 
                     <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100">
                         <div class="tag-area ">Proteção contra </div>
-                        <h3>Busca e Apreensão</h3>
-                        <p>Defesa estratégica para evitar a perda do seu veículos e renegociação imediata da dívida bancária.</p>                        
-                    </div>
-
-                    <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100">
-                        <div class="tag-area">Proteção contra</div>
-                        <h3>Negativação Indevida</h3>
-                        <p>Limpeza de nome e pedido de indenização por danos morais caso seu nome tenha sido sujo injustamente no SPC/SERASA.</p>
-                    </div>
-
-                    <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100">
-                        <div class="tag-area">Proteção contra</div>
-                        <h3>Golpes  de empréstimos (consignado e comum)</h3>
-                        <p>Recuperação de valores perdidos em golpes de PIX , clonagem de cartões e compras não reconhecidas na fatura .</p>
-                    </div>
-
-                    <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100">
-                        <div class="tag-area">Proteção contra</div>
                         <h3>Cartão de crédito consignado (RMC e RCC)</h3>
-                        <p>Suspensão de descontos abusivos de reservas da margem consignada no benefício de aposentados e pensionistas.</p>
+                        <p>Análise de contrato de financiamento de veículo, imóvel e empréstimo, para redução do valor das parcelas e eliminação de taxas ilegais.</p>
+                        <p></p>
+
+                        <a href="https://www.instagram.com/reel/DayZIUGvXKv/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="btn-saiba-mais">Saiba mais</a>
+                    </div>
+
+
+                    <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tag-area">Proteção contra</div>
+                        <h3>Juros Abusivos</h3>
+                        <p>Limpeza de nome e pedido de indenização por danos morais caso seu nome tenha sido sujo injustamente no SPC/SERASA.</p>
+                        <p></p>
+
+                        <a href="https://www.instagram.com/reel/DZDD9FaRYGN/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="btn-saiba-mais">Saiba mais</a>
                     </div>
 
                     <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100">
                         <div class="tag-area">Proteção contra</div>
                         <h3>Golpe da Falsa Portabilidade</h3>
                         <p>Atuação focada na anulação de contratos fraudulentos e na recuperação de valores indevidamente cobrados, exigindo a responsabilização das instituições envolvidas.</p>
+                        <p></p>                     
+                        
+                        <a href="https://www.instagram.com/reel/DYxAzAKRujr/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="btn-saiba-mais">Saiba mais</a>
+                    </div>
+                    
+
+                    <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tag-area">Proteção contra</div>
+                        <h3>Cloangem de cartão de crédito</h3>
+                        <p>Contestação de compras fraudulentas e pedido de estorno, exigindo reparação por danos morais contra a administradora do cartão.</p>
+                        <p></p>
+                    
+
+                    </div>
+
+                    <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tag-area">Proteção contra</div>
+                        <h3>Busca e Apreensão</h3>
+                        <p>Defesa especializada para evitar a perda do seu veículo, analisando cobranças irregulares e bloqueando ações abusivas dos bancos.</p>
+                        <p></p>
+
                     </div>
 
                     <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100">
                         <div class="tag-area">Proteção contra</div>
                         <h3>Golpe do PIX</h3>
-                        <p> Atuação rápida para o bloqueio e recuperação de valores, exigindo a responsabilização dos bancos por falhas de segurança.</p>       
+                        <p> Atuação rápida para o bloqueio e recuperação de valores, exigindo a responsabilização dos bancos por falhas de segurança.</p> 
+                        <p></p>
+                        
+                        <a href="https://www.instagram.com/reel/DZpsSOvOsTU/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="btn-saiba-mais">Saiba mais</a>
                     </div>
 
                 
 
                     <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100"> 
-                        <div class="tag-area"></div>
-                        <h3>   Defesa da pessoa física (geral)  </h3>
-                        <p> Proteção integral dos seus direitos contra práticas comerciais abusivas, cobranças indevidas e falhas na prestação de serviços.</p>                 
+                        <div class="tag-area">Proteção contra</div>
+                        <h3> Negativação indevida </h3>
+                        <p> Limpeza imediata do seu nome nos órgãos de proteção (SPC/Serasa) e pedido de indenização financeira por danos morais.</p>   
+                        <p></p>
+
                         
+                    </div>
+
+                    <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100"> 
+                        <div class="tag-area">Proteção contra</div>
+                        <h3> Cobrança indevida </h3>
+                        <p> Interrupção de cobranças ilegais ou em duplicidade e exigência judicial de devolução em dobro dos valores pagos injustamente.</p>  
+                        <p></p>
+                        
+                        <a href="https://www.instagram.com/reel/DYsCL4iRu6W/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="btn-saiba-mais">Saiba mais</a>                        
                     </div>
 
                     
                     <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100"> 
-                        <div class="tag-area"> </div>
-                        <h3>   Defesa da PJ no mercado de consumo (geral)  </h3>
-                        <p> Defesa estratégica para a sua empresa, focada na mitigação de riscos e na segurança jurídica durante as relações de consumo. </p>                 
+                        <div class="tag-area"> Proteção contra</div>
+                        <h3> Seguro veicular - recusa de indenização ou reparo </h3>
+                        <p>Ação judicial para obrigar a seguradora a liberar o pagamento da indenização devida ou realizar os consertos garantidos na apólice.</p>  
+                        <p></p>
+                        
+                                                
+                    </div>
+
+                    <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100"> 
+                        <div class="tag-area"> Proteção contra</div>
+                        <h3> Atraso e cancelamento de voo </h3>
+                        <p>Busca por compensação financeira e indenização por transtornos em aeroportos, extravio de bagagens e perda de compromissos.</p>   
+                        <p></p>
+                        
+                        <a href="https://www.instagram.com/reel/DZ-cPZOxK7w/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="btn-saiba-mais">Saiba mais</a>                        
+                    </div>
+
+                    <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100"> 
+                        <div class="tag-area">Proteção contra </div>
+                        <h3> Corte de energia elétrica </h3>
+                        <p>Atuação ágil para o restabelecimento imediato do serviço cortado de forma irregular e busca por reparação dos prejuízos causados.</p>                 
                         
                     </div>
+
+                    <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100"> 
+                        <div class="tag-area">Proteção contra </div>
+                        <h3> Recusa de reembolso de produto danificado ou não entregue </h3>
+                        <p>Exigência de devolução integral do valor pago ou troca imediata do produto, garantindo o respeito absoluto aos seus direitos.</p>     
+                        <p></p>
+                        
+                        <a href="https://www.instagram.com/reel/DZNybOfuTR9/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="btn-saiba-mais">Saiba mais </a>
+                        
+                    </div>
+
+                    <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100"> 
+                        <div class="tag-area">Proteção contra </div>
+                        <h3>Defesa do consumidor (geral) </h3>
+                        <p>Assessoria jurídica completa para resolver conflitos com lojas, prestadores de serviço e empresas, garantindo o cumprimento da lei. </p>                 
+                        
+                    </div>
+
+                    <div class="card-detalhado" data-aos="fade-up" data-aos-delay="100"> 
+                        <div class="tag-area">Proteção contra </div>
+                        <h3> Defesa da PJ no mercado de  consumo (geral)</h3>
+                        <p>Proteção jurídica para empresas que atuam como consumidoras finais, defendendo seu negócio contra fornecedores abusivos e falhas.</p>                 
+                        
+                    </div>
+
 
                 </div>            
 

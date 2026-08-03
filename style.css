@@ -26,12 +26,49 @@ h1, h2, h3 {
     box-sizing: border-box; /* Garante que bordas não aumentem o tamanho total dos elementos */
 }
 
- 
-/* Define a fonte padrão para o corpo do site */
- body{
+ body {
+    margin: 0; /* Remove a margem branca padrão do navegador */
+    padding-top: 70px; /* Mantém o espaço do seu menu fixo no PC */
     font-family: var(--fonte-texto);
     background-color: #f4f4f4;
 }
+
+/* Regra específica para corrigir a faixa branca no celular */
+@media (max-width: 768px) {
+    body {
+        /* Diminua este valor se a faixa continuar ou aumente se o menu cobrir o texto */
+        padding-top: 40px; 
+    }
+}
+
+.card-detalhado{
+    display:flex;
+    flex-direction: column;
+    height: 100%; /* Garante que todos os cards tenham a mesma altura */
+}
+
+.btn-saiba-mais{
+    display: inline-block;
+    background-color: #d4af37;
+    color: #ffffff !important;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    margin-top:auto;
+    transition: background-color 0.03s ease, transform 0.02s ease;
+}
+
+.btn-saiba-mais{
+    background-color: brightness(0.9);
+    transform: translateY(-2px)
+}
+
+.card-detalhado p{
+    margin-bottom: 20px;
+}
+
 
 /* ESTILOS DA HERO SECTION (SEÇÃO PRINCIPAL) */
 
@@ -488,10 +525,6 @@ header, .cabecalho {
     background-color: #c5a059;
 }
 
-/* Ajuste importante: como o menu é fixo e ocupa espaço, precisamos empurrar a seção principal para baixo */
-body {
-    padding-top: 70px; /* Compensa a altura do cabeçalho */
-}
 
 /* Ajuste para celular */
 @media (max-width: 768px) {
