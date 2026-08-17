@@ -1,153 +1,100 @@
-/* Tirar depois que estiver pronto 
-*{
-    border: 1px solid red !important;
-}*/
-
-/* VARIÁVEIS CSS 
- Aqui guardamos as cores principais do site. Se o Dr. Pierre quiser mudar o tom de azul no futuro, 
-   nós mudamos apenas aqui e o site inteiro atualiza sozinho*/
+/* =========================================
+   VARIÁVEIS CSS E RESET
+   ========================================= */
 :root {
-    --azul-escuro:#001f3f; /* cor que passa autoridade */
-    --dourado:#d4af37; /* cor que passa requinte/luxo*/
-    --fonte-titulo:'Playfair Display', serif;
-    --fonte-texto:'Poppins', sans-serif;
+    --azul-escuro: #001f3f; 
+    --dourado: #d4af37; 
+    --fonte-titulo: 'Playfair Display', serif;
+    --fonte-texto: 'Poppins', sans-serif;
 }
-/* Coloque logo abaixo do seu * { margin: 0; padding: 0; ... } */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0; 
+    padding-top: 70px; /* Espaço do menu fixo no PC */
+    font-family: var(--fonte-texto);
+    background-color: #f4f4f4;
+}
+
 h1, h2, h3 {
     overflow-wrap: break-word; 
     word-wrap: break-word;
 }
 
-/* RESET CSS 
- Remove margens e espaçamento padrão que os navegadores colocam por conta própria .*/
- *{
-    margin:0;
-    padding:0;
-    box-sizing: border-box; /* Garante que bordas não aumentem o tamanho total dos elementos */
-}
-
- body {
-    margin: 0; /* Remove a margem branca padrão do navegador */
-    padding-top: 70px; /* Mantém o espaço do seu menu fixo no PC */
-    font-family: var(--fonte-texto);
-    background-color: #f4f4f4;
-}
-
-/* Regra específica para corrigir a faixa branca no celular */
-@media (max-width: 768px) {
-    body {
-        /* Diminua este valor se a faixa continuar ou aumente se o menu cobrir o texto */
-        padding-top: 40px; 
-    }
-}
-
-.card-detalhado{
-    display:flex;
-    flex-direction: column;
-    height: 100%; /* Garante que todos os cards tenham a mesma altura */
-}
-
-.btn-saiba-mais{
-    display: inline-block;
-    background-color: #d4af37;
-    color: #ffffff !important;
-    text-decoration: none;
-    padding: 10px 24px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-align: center;
-    margin-top:auto;
-    transition: background-color 0.03s ease, transform 0.02s ease;
-}
-
-.btn-saiba-mais{
-    background-color: brightness(0.9);
-    transform: translateY(-2px)
-}
-
-.card-detalhado p{
-    margin-bottom: 20px;
-}
-
-
-/* ESTILOS DA HERO SECTION (SEÇÃO PRINCIPAL) */
-
-/* O container principal da tela de inicial */
-.hero{
-    position:relative; /*Necessário para a pelicula (overlay) funcionar em cima dele*/
-    height:90vh; /* Ocupa 90% da altura da tela (viewport height)*/
-    display: flex; /* Usamos Flexbox para centralizar o conteúdo facilmente */
-    align-items: center; /* Centraliza na vertical*/
-    justify-content: center; /*Centralizar na horizontal*/
-    text-align: center; /*centralizar o texto */
-    color: white; /* cor do texto */
-
-    /* Imagem de fundo. Se não encontrar a imagem , ele usa a cor azul escuro como fallback */
-    background:var(--azul-escuro) url('imagens/fundo-advocacia.webp') no-repeat center center/cover;
-    overflow:hidden; /*Esconde qualquer coisa que vazer para fora da seção*/
-}
-
-/* Pelicula escura para dar leitura ao texto sobre a imagem */
-.hero-overlay{
-    position: absolute;
-    top:0;
-    left:0;
+/* =========================================
+   CABEÇALHO E MENU (PC)
+   ========================================= */
+.cabecalho {
+    background-color: var(--azul-escuro);
+    position: fixed; 
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 20, 40, 0.7); /* Cor azul muito escura com 70% de transparência */
-    z-index: 1; /*Coloca a película na camada 1 (acima do funco)*/
+    z-index: 999; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    padding: 10px 5% !important; 
+    margin-bottom: 0 !important;
+    border-bottom: none !important; 
 }
 
-/*Container que segura o texto  e os botões */
-.hero-content{
-    position: relative;
-    z-index: 2;/* Coloca o conteúdo na camada 2 (acima da película) para não ficar escuro */
-    max-width: 800px;/* Impede que o texto fique comprido demais em telas gigantes */
-    padding: 0 20px; /* Dá um respiro nas laterais para telas menores */
-}
-
-.hero-content h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem); 
-    line-height: 1.2;
-    margin-bottom: 20px;
-    font-family: var(--fonte-titulo);
-    padding: 0 5%; 
-}
-
-/* E faça o mesmo com o .titulo-secao que está espalhado pelo site */
-.titulo-secao {
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    line-height: 1.2;
-    margin-bottom: 40px;
-    padding: 0 15px;
-}
-
-/* Aquele pedaço de texto que queremos dar ênfase */
-.hero-content .destaque {
-    color: var(--dourado);
-}
-
-/* Estilo do parágrafo abaixo do título */
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    opacity: 0.9; /* Deixa o branco um pouco mais suave para não cansar a vista */
-}
-
-/* Container que alinha os botões lado a lado */
-.hero-buttons {
-   display: flex;
-    justify-content: center;
+.container-cabecalho {
+    display: flex;
+    justify-content: space-between; 
     align-items: center;
-    width: 100%;
-    margin-top: 30px;
-    padding: 0 15px;
-    box-sizing: border-box;
-    position: relative;
-    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
 }
 
-/* Estilo do Botão Dourado (Principal) */
+.logo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    color: var(--dourado);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Oculta o botão hambúrguer no PC */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: var(--dourado);
+    cursor: pointer;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px; 
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: var(--dourado); 
+}
+
+/* =========================================
+   BOTÕES GERAIS E FLUTUANTES
+   ========================================= */
 .btn-principal {
     background-color: var(--dourado);
     color: #ffffff;
@@ -160,56 +107,33 @@ h1, h2, h3 {
     transition: all 0.3s ease;
     text-align: center;
     display: inline-block;
-    position: relative;     /* Permite que o z-index funcione */
-    z-index: 10;            /* Joga o botão para a camada da frente */
-    cursor: pointer;        /* Garante que o mouse vire a "mãozinha" de clique */
-
+    position: relative;    
+    z-index: 10;            
+    cursor: pointer;        
 }
 
-/* Efeito ao passar o mouse (Hover) no botão principal */
 .btn-principal:hover {
     background-color: #b8962e; 
-    transform: translateY(-3px); /* Faz o botão dar um pulinho para cima */
+    transform: translateY(-3px); 
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Estilo do Botão Vazado (Secundário) */
-.btn-secundario {
-    border: 2px solid white; /* Borda branca */
-    background-color: transparent; /* Fundo transparente */
-    color: white;
-    padding: 15px 30px;
+.btn-menu {
+    background-color: var(--dourado);
+    padding: 10px 25px;
     border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
+    color: #fff !important;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(212, 175, 55 , 0.3);
+    transition: all 0.3s ease;
 }
 
-/* Efeito ao passar o mouse (Hover) no botão secundário */
-.btn-secundario:hover {
-    background: white; /* Preenche de branco */
-    color: var(--azul-escuro); /* Muda a letra para azul escuro */
+.btn-menu:hover {
+    background-color: #b8962e;
+    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.5);
+    transform: scale(1.05); 
 }
 
-/* =========================================
-   MEDIA QUERIES (Responsividade)
-   Regras que só funcionam em telas de celulares (até 768px de largura)
-   ========================================= */
-@media (max-width: 768px) {
-    .hero-content h1 { 
-        font-size: 2.2rem; /* Diminui o título para caber no celular */
-    }
-    .hero { 
-        height: auto; /* Tira a altura fixa para o conteúdo ditar o tamanho */
-        padding: 100px 0; /* Dá espaçamento em cima e embaixo */
-    }
-}
-
-/* =========================================
-   BOTÃO FLUTUANTE 
-   ========================================= */
-
-/* Container que agrupa e posiciona os botões */
 .botoes-flutuantes {
     position: fixed;
     bottom: 20px;
@@ -220,7 +144,6 @@ h1, h2, h3 {
     z-index: 9999;
 }
 
-/* Estilo base dos botões redondos */
 .btn-flutuante {
     width: 60px;
     height: 60px;
@@ -237,69 +160,82 @@ h1, h2, h3 {
     transform: scale(1.1);
 }
 
-/* Cores de fundo (Vermelho e Verde) */
-.btn-flutuante.email {
-    background-color: #e53935; 
-}
 .btn-flutuante.whatsapp {
     background-color: #25d366; 
 }
 
-/* Tamanho dos ícones (sem o filtro) */
 .icone-btn {
     width: 35px;
     height: 35px;
     object-fit: contain;
 }
-.img-capa{
-    width:100%; /* Ocupa 100% da largura da tela */
-    height: 100vh; /* Ocupa 100% da altura da tela (pode ajustar esse valor se quiser menor) */
-    object-fit: cover;
-    object-position: center;
+
+/* =========================================
+   ESTILOS DA HERO SECTION (SEÇÃO PRINCIPAL)
+   ========================================= */
+.hero {
+    position: relative; 
+    min-height: 80vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    color: white; 
+    background: var(--azul-escuro) url('imagens/fundo-advocacia.webp') no-repeat center center/cover;
+    overflow: hidden; 
+    padding: 60px 20px; 
 }
-.secao-capa{
-    background-image: url('imagens/capa-site.webp');
-    background-size: cover; /* 🌟 A MÁGICA DO MOBILE: Preenche a div sem distorcer */
-    background-position: center; /* Centraliza o foco da imagem */
-    background-repeat: no-repeat; /* Evita que a foto fique se repetindo como um azulejo */
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100vh; /* Altura da tela */
+    height: 100%;
+    background: rgba(0, 20, 40, 0.7); 
+    z-index: 1; 
 }
 
-/* Ajuste para telas de celular */
-@media (max-width: 768px) {
-    .whatsapp-flutuante {
-        bottom: 20px;
-        right: 20px;
-        width: 50px; /* Fica um pouco menor no celular para não atrapalhar a leitura */
-        height: 50px;
-    }
-    
-    .whatsapp-flutuante img {
-        width: 30px;
-        height: 30px;
-    }
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px; 
+}
 
-  
+.hero-content h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem); 
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-family: var(--fonte-titulo);
+    padding: 0 5%; 
+}
+
+.hero-content .destaque {
+    color: var(--dourado);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9; 
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
 }
 
 /* =========================================
-   SEÇÃO SOBRE (Perfil do Advogado)
+   SEÇÕES GERAIS E CONTAINERS
    ========================================= */
-.secao-sobre {
-    padding: 100px 20px;
-    background-color: #ffffff; /* Fundo branco para contrastar com a seção de serviços que é cinza */
-}
-
-/* O Flexbox que divide a tela ao meio */
-.container-sobre {
-    display: flex;
-    align-items: center; /* Centraliza a foto e o texto na mesma linha imaginária */
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 60px; /* Espaço generoso entre a foto e o texto */
-}
-/* Pode colocar antes de começar as seções específicas */
 .container, .container-sobre, .container-servicos, .container-rodape {
     width: 100%;
     max-width: 1200px;
@@ -309,302 +245,121 @@ h1, h2, h3 {
     box-sizing: border-box; 
 }
 
-/* Limpando e forçando o título para baixo */
-#atuacao {
-    display: block !important;
-    width: 100%;
-    clear: both; /* Garante que ele não tente subir para o lado da foto */
-    padding-top: 100px !important; /* Espaço interno no topo da seção */
+.titulo-secao {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    line-height: 1.2;
+    margin-bottom: 40px;
+    padding: 0 15px;
 }
 
-#atuacao h2 {
-    margin-top: 0 !important;
-    margin-bottom: 40px !important;
-    text-align: center;
-    font-size: 2.5rem; /* Deixa o título imponente */
-    color: #1a2b4c; /* Cor azul escura profissional */
+.secao-sobre {
+    padding: 100px 20px;
+    background-color: #ffffff; 
 }
 
+.container-sobre {
+    display: flex;
+    align-items: center; 
+    gap: 60px; 
+}
 
-
-/* Configura a coluna da foto para ocupar metade do espaço */
 .imagem-sobre {
-    flex: 1; /* Ocupa 1 "fatia" do espaço */
+    flex: 1; 
 }
 
 .imagem-sobre img {
-    width: 100%; /* A foto se ajusta à largura da coluna */
-    border-radius: 10px; /* Bordas levemente arredondadas */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Sombra elegante sob a foto */
-    object-fit: cover; /* Evita que a foto fique esticada/deformada */
+    width: 100%; 
+    border-radius: 10px; 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); 
+    object-fit: cover; 
 }
 
-/* Configura a coluna do texto para ocupar a outra metade */
 .texto-sobre {
-    flex: 1; /* Ocupa a outra 1 "fatia" do espaço */
+    flex: 1; 
 }
 
 .texto-sobre h2 {
-    text-align: left; /* Garante que o título alinhe à esquerda junto com o texto */
+    text-align: left; 
     margin-bottom: 30px;
 }
 
 .texto-sobre p {
     color: #555;
     font-size: 1.1rem;
-    line-height: 1.8; /* Dá um respiro legal entre as linhas do texto */
+    line-height: 1.8; 
     margin-bottom: 20px;
 }
 
-/* Ajuste para telas de celular (Empilha a foto em cima do texto) */
-@media (max-width: 768px) {
-    .container-sobre {
-        flex-direction: column; /* Quebra o lado a lado e coloca um embaixo do outro */
-        text-align: center;
-    }
-    
-    .texto-sobre h2 {
-        text-align: center; /* No celular, centraliza o título */
-    }
-}
-
 /* =========================================
-   RODAPÉ (FOOTER)
+   SEÇÃO ATUAÇÃO DETALHADA
    ========================================= */
-.rodape {
-    background-color: var(--azul-escuro); /* Fundo com a cor principal */
-    color: #ffffff; /* Texto branco */
-    padding-top: 60px; /* Espaço interno em cima */
-}
-
-/* O Grid que divide o rodapé em 3 colunas */
-.container-rodape {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colunas responsivas */
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px 40px 20px; /* Espaço nas laterais e embaixo */
-}
-
-.coluna-rodape h3.logo-rodape {
-    font-family: var(--fonte-titulo);
-    font-size: 1.8rem;
-    color: var(--dourado); /* Nome do advogado em dourado */
-    margin-bottom: 15px;
-}
-
-.coluna-rodape h4 {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    color: var(--dourado);
-    text-transform: uppercase; /* Letras maiúsculas */
-    letter-spacing: 1px; /* Espaço entre as letras */
-}
-
-.coluna-rodape p {
-    color: #ccc; /* Um branco levemente acinzentado para leitura suave */
-    line-height: 1.8;
-    margin-bottom: 10px;
-    font-size: 0.95rem;
-}
-
-/* Destaque para o número da OAB */
-.oab {
-    margin-top: 15px;
-    color: #fff;
-    font-size: 1rem;
-}
-
-/* Faixa final de Copyright */
-.direitos-autorais {
-    text-align: center;
-    padding: 20px;
-    background-color: #00152b; /* Um azul AINDA MAIS escuro que o topo do rodapé */
-    font-size: 0.85rem;
-    color: #888;
-}
-
-/* Ajuste para celular */
-@media (max-width: 768px) {
-    .container-rodape {
-        text-align: center; /* Centraliza tudo no celular */
-    }
-}
-
-/* =========================================
-   CABEÇALHO E MENU (Header)
-   ========================================= */
-.cabecalho {
-    background-color: var(--azul-escuro);
-    position: fixed; /* Prende o menu no topo da tela */
-    top: 0;
-    left: 0;
+#atuacao {
+    display: block !important;
     width: 100%;
-    z-index: 999; /* Fica acima de tudo (só perde para o botão do WhatsApp) */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    clear: both; 
+    padding-top: 100px !important; 
 }
 
-.container-cabecalho {
-    display: flex;
-    justify-content: space-between; /* Joga a logo pra esquerda e o menu pra direita */
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 15px 20px;
+#atuacao h2 {
+    margin-top: 0 !important;
+    margin-bottom: 40px !important;
+    text-align: center;
+    font-size: 2.5rem; 
+    color: #1a2b4c; 
 }
 
-/* 1. Deixando o cabeçalho mais alto e imponente */
-header, .cabecalho {
-    /* O primeiro valor (25px) aumenta a altura (cima e baixo). O segundo (5%) mantém as laterais */
-    padding: 10px 5% !important; 
-    
-    /* Matando qualquer margem ou borda que crie a linha branca */
-    margin-bottom: 0 !important;
-    border-bottom: none !important; 
-}
-
-/* Ajustes para telas grandes (PC/Notebook) */
-.hero {
-    /* MÁGICA: Define que a foto ocupará no mínimo 80% da altura da tela */
-    min-height: 80vh; 
-    
-    /* Mantemos os outros estilos que você já deve ter */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    /* Centralização do conteúdo interno (Título e Botão) */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    /* Garante que o espaçamento interno (padding) respire */
-    padding: 60px 20px; 
-}
-
-/* Estilo do Logo/Nome no menu */
-.logo {
-    font-family: var(--fonte-titulo);
-    font-size: 1.5rem;
-    color: var(--dourado);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Tira as bolinhas da lista do menu */
-.menu ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 30px; /* Espaço entre os links */
-}
-
-/* Estilo dos links do menu */
-.menu a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-}
-
-.menu a:hover {
-    color: var(--dourado); /* Fica dourado ao passar o mouse */
-}
-
-/* Estilo do botão de destaque no menu */
-.btn-menu {
-    background-color: var(--dourado);
-    padding: 8px 20px;
-    border-radius: 5px;
-    color: #fff !important;
-}
-
-.btn-menu:hover {
-    background-color: #c5a059;
-}
-
-
-/* Ajuste para celular */
-@media (max-width: 768px) {
-    .menu {
-        display: none; /* Em projetos avançados criamos o "Menu Hambúrguer", por enquanto ocultamos para não quebrar a tela */
-    }
-}
-
-/* Faz a página deslizar suavemente em vez de pular direito */
-html{
-    scroll-behavior: smooth;
-}
-
-
-/* No botão do menu , vamos adicionar um efeito de pulsação leve */
-.btn-menu{
-    background-color: var(--dourado);
-    padding: 10px 25px;
-    border-radius: 5px;
-    color: #fff !important;
-    font-weight: 600;
-    box-shadow: 0 4px 10px rgba(212, 175, 55 , 0.3);
-    transition: all 0.3s ease;
-}
-
-.btn-menu:hover{
-    background-color: #b8962e;
-    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.5);
-    transform: scale(1.05); /*Aumenta levemente ao passar o mouse */
-
-}
-
-/* SEÇÃO ATUAÇÃO DETALHADA */
-.secao-atuacao{
+.secao-atuacao {
     padding: 100px 20px;
     background-color: #f9f9f9;
 }
 
-.subtitulo-secao{
+.subtitulo-secao {
     text-align: center;
     max-width: 700px;
-    margin:  -30px auto 50px auto ; /* Sobe um pouco para ficar perto di título*/
+    margin: -30px auto 50px auto ; 
     color: #666;
     font-size: 1.1rem;
 }
 
-.grid-atuacao{
+.grid-atuacao {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
     gap: 25px;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
-.card-detalhado{
+.card-detalhado {
     background: #fff;
     padding: 30px;
     border-radius: 8px;
-    border-left: 5px solid var(--azul-escuro); /* Detalhe lateral na cor escritório*/
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    border-left: 5px solid var(--azul-escuro); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.card-detalhado:houve {
+/* Corrigido o bug de digitação (estava :houve) */
+.card-detalhado:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-#servicos{
-    scroll-margin-top:90px;
+.card-detalhado h3 {
+    font-family: var(--fonte-titulo);    
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    color: var(--azul-escuro);   
 }
 
-.seca-servicos{
-    padding:80px 20px ;
-    background-color: #f4f4f4;
-    text-align:center;
+.card-detalhado p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
-/*Estilo das tags (etiquetas)*/
-.tag-area{
+.tag-area {
     display: inline-block;
     padding: 4px 12px;
     border-radius: 20px;
@@ -612,57 +367,190 @@ html{
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 15px;
-}
-
-.bancario{
     background-color: #e3f2fd;
-    color: #1565c0; /* Tom de azul para bancos */
+    color: #1565c0; 
 }
 
-.consumidor{
-    background-color: #fff3e0;;
-    color:#ef6c00; /* Tom de laranja para consumidor */
+.btn-saiba-mais {
+    display: inline-block;
+    background-color: var(--dourado);
+    color: #ffffff !important;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: auto;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.card-detalhado h3{
-    font-family: var(--fonte-titulo);    
-    margin-bottom: 15px;
-    font-size: 1.4rem;
-    color:var(--azul-escuro)   
-    
-}
-
-.card-detalhado p{
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.6;
-}
-
-/* Responsividade */
-@media (max-width:768px){
-    .grid-atuacao{
-        grid-template-columns: 1fr; /* Em celulares muitos pequenos , fica uma coluna só */
-    }
+.btn-saiba-mais:hover {
+    background-color: #b8962e;
+    transform: translateY(-2px);
 }
 
 /* =========================================
-   CORREÇÃO DEFINITIVA MOBILE
+   RODAPÉ (FOOTER)
+   ========================================= */
+.rodape {
+    background-color: var(--azul-escuro); 
+    color: #ffffff; 
+    padding-top: 60px; 
+}
+
+.container-rodape {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 40px;
+    padding: 0 20px 40px 20px; 
+}
+
+.coluna-rodape h3.logo-rodape {
+    font-family: var(--fonte-titulo);
+    font-size: 1.8rem;
+    color: var(--dourado); 
+    margin-bottom: 15px;
+}
+
+.coluna-rodape h4 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--dourado);
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+}
+
+.coluna-rodape p {
+    color: #ccc; 
+    line-height: 1.8;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.oab {
+    margin-top: 15px;
+    color: #fff !important;
+    font-size: 1rem;
+}
+
+.direitos-autorais {
+    text-align: center;
+    padding: 20px;
+    background-color: #00152b; 
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* =========================================
+   CORREÇÃO DEFINITIVA MOBILE (Telas até 768px)
+   Todas as regras de celular agrupadas aqui!
    ========================================= */
 @media (max-width: 768px) {
     
-    /* Garante que nada saia da tela */
-    * {
-        max-width: 100vw;
+    /* Configurações Globais de Leitura e Tela */
+    * { max-width: 100vw; }
+    
+    body {
+        padding-top: 60px; /* Ajustado para a nova altura do cabeçalho */
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333333;
+        background-color: #FAFAFA;
+    }
+    
+    p { margin-bottom: 16px; }
+
+    /* 1. Cabeçalho e Menu Hambúrguer */
+    .cabecalho {
+        height: 60px;
+        padding: 0 10px !important;
+        display: flex;
+        align-items: center;
     }
 
-    /* 1. Ajuste do Título Principal (Print 1) */
+    .container-cabecalho {
+        width: 100%;
+        padding: 0;
+    }
+
+    .logo { font-size: 1.3rem; }
+
+    .menu-toggle { display: block; } /* Mostra o ícone ☰ */
+
+    #menuLinks {
+        display: none; /* Esconde a lista de links padrão */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        width: 100%;
+        background-color: var(--azul-escuro);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        padding: 0;
+        z-index: 999;
+    }
+
+    #menuLinks.ativo {
+        display: flex; /* O JavaScript aciona isso para abrir o menu */
+    }
+
+    #menuLinks ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        gap: 0;
+    }
+
+    #menuLinks li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #menuLinks a {
+        display: block;
+        padding: 20px 0; /* Regra do polegar: botões de menu grandes */
+        font-size: 1.1rem;
+    }
+
+    #menuLinks .btn-principal {
+        margin: 15px auto;
+        width: 80%;
+    }
+
+    /* 2. Hero Section (Primeira Dobra) */
+    .hero {
+        min-height: calc(100vh - 60px); 
+        padding: 20px 15px;
+        height: auto;
+    } 
+
     .hero-content h1 {
-        font-size: 1.8rem !important; /* Diminui o tamanho para não encavalar */
+        font-size: 1.8rem !important;
         line-height: 1.3;
         margin-bottom: 15px;
     }
 
-    /* 2. Ajuste da Seção Atuação (Print 3 - Título encavalado) */
+    .hero-buttons {
+       justify-content: center; 
+    }
+
+    .btn-principal {
+        width: 90%; 
+        max-width: 320px;
+    }
+
+    /* 3. Seção Sobre */
+    .container-sobre {
+        flex-direction: column; 
+        text-align: center;
+    }
+    
+    .texto-sobre h2 {
+        text-align: center; 
+    }
+
+    /* 4. Seção Atuação */
     .secao-atuacao {
         padding: 60px 15px;
     }
@@ -680,7 +568,7 @@ html{
     }
 
     .grid-atuacao {
-        display: flex; /* Muda de Grid para Flex no celular para evitar erros de largura */
+        display: flex; 
         flex-direction: column;
         gap: 20px;
     }
@@ -690,13 +578,13 @@ html{
         margin: 0;
     }
 
-    /* 3. Ajuste do Rodapé (Print 2 - O mais crítico) */
+    /* 5. Rodapé */
     .rodape {
         padding: 40px 10px;
     }
 
     .container-rodape {
-        display: flex; /* Força os elementos a ficarem um embaixo do outro sem grid */
+        display: flex; 
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -719,21 +607,14 @@ html{
         font-size: 0.75rem;
     }
 
-    /* 4. Ajuste dos Botões (Para não ficarem grudados na borda) */
-    .hero-buttons {
-       justify-content: center; /*centraliza o botão no cell*/
+    /* 6. Botão Flutuante (Tamanho Thumb Zone) */
+    .btn-flutuante {
+        width: 50px; 
+        height: 50px;
     }
-
-    .btn-principal{
-        width: 90%; /* deixa o botão grande e facíl de tocar pelo cell */
-        max-width: 320px;
-    }
-
-    .hero {
-        /* No celular, usamos um tamanho um pouco menor para o botão aparecer rápido */
-        min-height: 60vh; 
-        
-        /* Ajuste o padding para não esmagar o texto dos lados */
-        padding: 40px 15px;
+    
+    .icone-btn {
+        width: 30px;
+        height: 30px;
     }
 }
