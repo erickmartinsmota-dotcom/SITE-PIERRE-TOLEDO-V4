@@ -8,17 +8,24 @@
         
         <meta property="og:title" content="Dr. Pierre Toledo - Advocacia Especializada">
         <meta property="og:description" content="Especialista em direito. Agende sua consulta Conosco">
-        <meta property="og:image" content="https://seusite.com.br/imagens/foto-pierre.jpg">
+        <meta property="og:image" content="https://seusite.com.br/imagens/foto-pierre.webp">
 
         <link rel="icon" type="image/png" href="imagens/favicon.png">
 
+        <!-- 🚀 PERFORMANCE: Preconnect para acelerar a conexão com o Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="style.css?v=2">
-        <link rel="preload" as="image" href="imagens/fundo-advocacia.webp">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+        <!-- 🚀 PERFORMANCE: Google Fonts carregado sem bloquear a renderização -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" media="print" onload="this.media='all'">
+
+        <link rel="stylesheet" href="style.css?v=3">
+        
+        <!-- 🚀 PERFORMANCE: Força o navegador a baixar a imagem de fundo com prioridade máxima -->
+        <link rel="preload" as="image" href="imagens/fundo-advocacia.webp" fetchpriority="high">
+        
+        <!-- 🚀 PERFORMANCE: CSS do AOS (Animações) carregado sem bloquear a renderização -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
 
        <!-- Google tag (gtag.js) -->
        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7MCPGBG1TW"></script>
@@ -92,7 +99,8 @@
         <section id="sobre" class="secao-sobre">
           <div class="container-sobre">
                 <div class="imagem-sobre">
-                  <img src="imagens/foto-pierre.jpg" alt="Dr. Pierre Toledo no Escritório">
+                  <!-- 🚀 PERFORMANCE: Imagem em WEBP com lazy load para carregar mais rápido -->
+                  <img src="imagens/foto-pierre.webp" alt="Dr. Pierre Toledo no Escritório" loading="lazy">
                 </div>
                 <div class="texto-sobre">
                  <h2 class="titulo-secao">Conheça o Dr. Pierre Toledo</h2>
@@ -106,9 +114,8 @@
         </section>
 
         <div class="botoes-flutuantes">
-            <!-- Botão do WhatsApp corrigido com as suas classes e com rastreamento -->
-            <a href="https://wa.me/5521979146966?text=Olá,%20Dr.%20Pierre.%20Gostaria%20de%20agendar%20uma%20consulta." class="btn-flutuante whatsapp" target="_blank" rel="noopener noreferrer" onclick="return gtag_report_conversion('https://wa.me/5521979146966?text=Olá,%20Dr.%20Pierre.%20Gostaria%20de%20agendar%20uma%20consulta.');">
-                <img src="https://api.iconify.design/mdi/whatsapp.svg?color=white" alt="WhatsApp" class="icone-btn">
+            <a href="https://wa.me/5521979146966?text=Olá,%20Dr.%20Pierre.%20Gostaria%20de%20agendar%20uma%20consulta." class="btn-flutuante whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Falar pelo WhatsApp" onclick="return gtag_report_conversion('https://wa.me/5521979146966?text=Olá,%20Dr.%20Pierre.%20Gostaria%20de%20agendar%20uma%20consulta.');">
+                <img src="https://api.iconify.design/mdi/whatsapp.svg?color=white" alt="WhatsApp" class="icone-btn" loading="lazy">
             </a>
         </div>
 
@@ -227,7 +234,6 @@
               });
         </script>
 
-        <!-- Rodapé corrigido (estrutura única) -->
         <footer id="rodape" class="rodape">
             <div class="container-rodape">
                <div class="coluna-rodape">
@@ -293,6 +299,3 @@
         </script>
     </body>
 </html>
-
-
-
